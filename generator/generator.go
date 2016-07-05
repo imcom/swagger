@@ -22,7 +22,7 @@ const (
 )
 
 var generatedFileTemplate = `
-package main
+package controllers
 //This file is generated automatically. Do not try to edit it manually.
 
 var resourceListingJson = {{resourceListing}}
@@ -139,7 +139,7 @@ func Run(params Params) error {
 	//Support gopaths with multiple directories
 	dirs := strings.Split(gopath, ":")
 	if runtime.GOOS == "windows" {
-        	dirs = strings.Split(gopath, ";")
+		dirs = strings.Split(gopath, ";")
 	}
 	found := false
 	for _, d := range dirs {

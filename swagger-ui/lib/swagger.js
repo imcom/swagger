@@ -176,7 +176,7 @@ SwaggerApi.prototype.buildFromSpec = function(response) {
     }
   }
   if (response.basePath) {
-    this.basePath = response.basePath;
+    this.basePath = response.basePath + "/docs";
   } else if (this.url.indexOf('?') > 0) {
     this.basePath = this.url.substring(0, this.url.lastIndexOf('?'));
   } else {
@@ -1489,7 +1489,7 @@ SwaggerAuthorizations.prototype.apply = function(obj, authorizations) {
           if (result === true)
             status = true;
         }
-      }      
+      }
     }
   }
 
